@@ -1,0 +1,14 @@
+.btn-delete {
+    -fx-background-color: #db1a29;
+    -fx-text-fill: white;
+}
+
+.btn-delete:hover {
+    -fx-background-color: #e91010;
+}
+
+.btn-delete:pressed {
+    -fx-background-color: #c30000;
+    -fx-scale-x: 0.999;
+    -fx-scale-y: 0.999;
+}

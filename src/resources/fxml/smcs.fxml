@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="648.0" prefWidth="1109.0" style="-fx-background-color: #fff;" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.SmcsController">
+    <children>
+      <ScrollPane layoutY="105.0" prefHeight="514.0" prefWidth="1067.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="105.0">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1000.0" prefWidth="2000.0">
+               <children>
+                  <TableView fx:id="table" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columns>
+                        <TableColumn fx:id="id_cl" prefWidth="75.0" text="STT" />
+                        <TableColumn fx:id="name_cl" prefWidth="150.0" text="Họ và tên" />
+                        <TableColumn fx:id="gioiTinh_cl" prefWidth="100.0" text="Giới tính" />
+                        <TableColumn fx:id="ngaySinh_cl" prefWidth="120.0" text="Ngày sinh" />
+                        <TableColumn fx:id="soCM_cl" prefWidth="120.0" text="Số CMND" />
+                        <TableColumn fx:id="ngayCap_cl" prefWidth="120.0" text="Ngày cấp" />
+                        <TableColumn fx:id="noiCap_cl" prefWidth="100.0" text="Nơi cấp" />
+                        <TableColumn fx:id="maTinh_cl" prefWidth="100.0" text="Mã tỉnh" />
+                        <TableColumn fx:id="maHinh_cl" prefWidth="100.0" text="Mã hình" />
+                        <TableColumn fx:id="diaChi_cl" prefWidth="350.0" text="Địa chỉ" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <Label layoutX="14.0" layoutY="11.0" text="SMCS">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Button fx:id="chose_bt" layoutX="726.0" layoutY="55.0" mnemonicParsing="false" onAction="#checkFile" prefHeight="25.0" prefWidth="88.0" styleClass="btn2" text="Duyệt file" AnchorPane.rightAnchor="253.0" />
+      <Button fx:id="start_bt" layoutX="955.0" layoutY="30.0" mnemonicParsing="false" onAction="#makeFile" prefHeight="50.0" prefWidth="88.0" styleClass="btn1" text="Bắt đầu" AnchorPane.rightAnchor="24.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <ProgressIndicator fx:id="processBar" layoutX="86.0" layoutY="11.0" prefHeight="40.0" prefWidth="41.0" visible="false" />
+      <CheckBox fx:id="auto_cb" layoutX="63.0" layoutY="59.0" mnemonicParsing="false" text="Auto" />
+      <Button fx:id="copy_bt" layoutX="855.0" layoutY="55.0" mnemonicParsing="false" onAction="#copyFile" text="Copy" AnchorPane.rightAnchor="168.0" />
+      <TextField fx:id="filePath_tf" layoutX="278.0" layoutY="55.0" prefHeight="25.0" prefWidth="439.0" AnchorPane.leftAnchor="278.0" AnchorPane.rightAnchor="350.0" AnchorPane.topAnchor="55.0" />
+      <Label layoutX="177.0" layoutY="59.0" text="Đường dẫn file:" AnchorPane.leftAnchor="177.0" AnchorPane.topAnchor="59.0" />
+    </children>
+</AnchorPane>

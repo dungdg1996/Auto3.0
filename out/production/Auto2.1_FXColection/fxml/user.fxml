@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="762.0" prefWidth="927.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.UserController">
+    <children>
+        <ComboBox fx:id="khuVuc" layoutX="129.0" layoutY="93.0" prefWidth="150.0" AnchorPane.rightAnchor="710.0" />
+        <Label layoutX="88.0" layoutY="176.0" text="Tên:" textFill="#06002c" AnchorPane.rightAnchor="876.0">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="ten" layoutX="131.0" layoutY="173.0" prefHeight="25.0" prefWidth="260.0" AnchorPane.rightAnchor="598.0" />
+        <Label layoutX="84.0" layoutY="217.0" text="PGD:" textFill="#06002c" AnchorPane.rightAnchor="876.0">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="pgd" layoutX="131.0" layoutY="214.0" prefHeight="25.0" prefWidth="260.0" AnchorPane.rightAnchor="598.0" />
+        <Label layoutX="43.0" layoutY="258.0" text="Địa chỉ PGD:" textFill="#06002c" AnchorPane.rightAnchor="876.0">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="diaChiPgd" layoutX="131.0" layoutY="255.0" prefHeight="25.0" prefWidth="260.0" AnchorPane.rightAnchor="598.0" />
+        <Label layoutX="59.0" layoutY="299.0" text="SDT PGD:" textFill="#06002c" AnchorPane.rightAnchor="876.0">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="sdtPgd" layoutX="131.0" layoutY="295.0" prefHeight="25.0" prefWidth="260.0" AnchorPane.rightAnchor="598.0" />
+        <Label layoutX="35.0" layoutY="348.0" text="Đại diện PGD:" textFill="#06002c" AnchorPane.rightAnchor="876.0">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="daiDienPgd" layoutX="131.0" layoutY="344.0" prefHeight="25.0" prefWidth="260.0" AnchorPane.rightAnchor="598.0" />
+        <Label layoutX="63.0" layoutY="96.0" text="Khu vực:" textFill="#06002c" AnchorPane.rightAnchor="876.0">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <Label layoutX="62.0" layoutY="134.0" text="File mẫu:" textFill="#06002c" AnchorPane.rightAnchor="876.0">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="path" editable="false" layoutX="131.0" layoutY="131.0" prefHeight="25.0" prefWidth="201.0" AnchorPane.rightAnchor="657.0" />
+        <Button fx:id="chose" layoutX="344.0" layoutY="131.0" mnemonicParsing="false" onAction="#choseFolder" text="Chọn" AnchorPane.rightAnchor="600.0" />
+        <Button fx:id="pre" layoutX="474.0" layoutY="722.0" mnemonicParsing="false" onAction="#pre" text="&lt;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="474.0" />
+        <Button fx:id="next" layoutX="942.0" layoutY="722.0" mnemonicParsing="false" onAction="#next" text="&gt;" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="22.0" />
+        <Button fx:id="save" layoutX="301.0" layoutY="387.0" mnemonicParsing="false" onAction="#save" prefHeight="34.0" prefWidth="87.0" text="Lưu" AnchorPane.rightAnchor="601.0">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Button>
+        <ImageView fx:id="img" fitHeight="669.0" fitWidth="493.0" layoutX="474.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="58.0" AnchorPane.leftAnchor="474.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="35.0" />
+        <Label layoutX="26.0" layoutY="24.0" text="Thông tin User" textFill="#000097" AnchorPane.rightAnchor="789.0">
+            <font>
+                <Font name="System Bold" size="25.0" />
+            </font>
+        </Label>
+        <Label fx:id="imgName" layoutX="707.0" layoutY="726.0" text="1.jpg" AnchorPane.bottomAnchor="19.0" />
+      <Button fx:id="delete" layoutX="131.0" layoutY="387.0" mnemonicParsing="false" onAction="#delete" prefHeight="34.0" prefWidth="87.0" styleClass="btn-delete" stylesheets="@style.css" text="Xoá">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+    </children>
+</AnchorPane>

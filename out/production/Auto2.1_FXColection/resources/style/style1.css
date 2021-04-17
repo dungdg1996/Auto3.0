@@ -1,0 +1,40 @@
+.button{
+    -fx-background-color: #0045AD;
+}
+.button:hover{
+    -fx-background-color: #003C8F;
+}
+.button:pressed{
+    -fx-background-color: #003C8F;
+    -fx-text-fill : white;
+}
+.text_field{
+       -fx-background-color: white;
+           -fx-text-fill : black;
+}
+.text_field:hover{
+       -fx-background-color: white;
+           -fx-text-fill : black;
+}
+.parent{
+    -fx-background-color: #725CDA;
+}
+.progress-bar:indeterminate .dot_1 {
+    -fx-background-color: white;
+}
+
+.progress-bar:indeterminate .dot_2 {
+    -fx-background-color: derive(white, -0%);
+}
+
+.progress-bar:indeterminate .dot_3 {
+    -fx-background-color: derive(white, -0%);
+}
+
+.progress-bar:indeterminate .dot_4 {
+    -fx-background-color: derive(white, -0%);
+}
+
+.progress-bar:indeterminate .dot_5 {
+    -fx-background-color: derive(white, -0%);
+}

@@ -1,0 +1,14 @@
+.btn1:hover{
+	-fx-background-color: #0045AD;
+}
+.btn1{
+	-fx-background-color: #005AD7;
+	-fx-text-fill:white;
+}
+.btn2{
+	-fx-background-color: #4DDB63;
+	-fx-text-fill:white;
+}
+.btn2:hover{
+	-fx-background-color: #1E9D32;
+}

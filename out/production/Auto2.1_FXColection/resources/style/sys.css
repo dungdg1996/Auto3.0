@@ -1,0 +1,6 @@
+.sys_btn{
+    -fx-opacity: 0.3;
+}
+.sys_btn:hover{
+    -fx-opacity: 1;
+}
