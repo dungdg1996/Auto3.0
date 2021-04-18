@@ -92,10 +92,10 @@ public class DanhSachController{
 
         //chung nang tim kiem
         tf_seach.setOnAction(event -> {
-            String[] values = (StringUtils.unAccent(tf_seach.getText().toUpperCase())+" ").split(" ");
+            String[] values = (StringUtils.removeAccent(tf_seach.getText().toUpperCase())+" ").split(" ");
             filteredList.setPredicate(
                     record -> {
-                        String key = StringUtils.unAccent(record.toString()).toUpperCase();
+                        String key = StringUtils.removeAccent(record.toString()).toUpperCase();
                         for (String value : values)
                             if (!key.contains(value)) return false;
                         return true; // or true

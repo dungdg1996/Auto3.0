@@ -1,6 +1,7 @@
 package app.views;
 
 import app.Conts;
+import app.utils.AppUtils;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 
@@ -10,7 +11,7 @@ public class Site {
     private FXMLLoader loader;
     private Parent root;
     public Site(String sour){
-        loader = Conts.openFXML(sour);
+        loader = AppUtils.openFXML(sour);
         try {
             root = loader.load();
         } catch (IOException e) {

@@ -10,7 +10,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static app.utils.ExcelUtils.cellToString;
+import static app.utils.ExcelUtils.getCellStringValue;
 
 public class SimDao {
     private final String filePath;
@@ -32,11 +32,11 @@ public class SimDao {
                 if (row == null) continue;
                 Sim sim = new Sim();
                 sim.setId(i);
-                String sdt = cellToString(row.getCell(0));
+                String sdt = getCellStringValue(row.getCell(0));
                 sim.setSdt(sdt.substring(sdt.length() - 9));
-                sim.setSeri(cellToString(row.getCell(1)));
-                if (row.getCell(2) != null) sim.setOtp(cellToString(row.getCell(2)));
-                if (row.getCell(3) != null) sim.setSoGiayTo(cellToString(row.getCell(3)));
+                sim.setSeri(getCellStringValue(row.getCell(1)));
+                if (row.getCell(2) != null) sim.setOtp(getCellStringValue(row.getCell(2)));
+                if (row.getCell(3) != null) sim.setSoGiayTo(getCellStringValue(row.getCell(3)));
                 list.add(sim);
             }
             workbook.close();

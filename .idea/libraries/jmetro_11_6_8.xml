@@ -1,12 +1,12 @@
 <component name="libraryTable">
   <library name="jmetro-11.6.8">
     <CLASSES>
-      <root url="jar://C:/Program Files/Java/Jmetro/jmetro-11.6.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jmetro-11.6.8.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://C:/Program Files/Java/Jmetro/jfxtras-styles-11.6.8.zip!/jfxtras-styles-11.6.8/jmetro-samples/src/main/java" />
-      <root url="jar://C:/Program Files/Java/Jmetro/jfxtras-styles-11.6.8.zip!/jfxtras-styles-11.6.8/jmetro/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/lib/jfxtras-styles-11.6.8.zip!/jfxtras-styles-11.6.8/jmetro-samples/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/lib/jfxtras-styles-11.6.8.zip!/jfxtras-styles-11.6.8/jmetro/src/main/java" />
     </SOURCES>
   </library>
 </component>

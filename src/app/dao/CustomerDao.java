@@ -10,7 +10,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.*;
 import java.util.*;
 
-import static app.utils.ExcelUtils.cellToString;
+import static app.utils.ExcelUtils.getCellStringValue;
 
 public class CustomerDao {
     private Map<Integer, String> emptyRows;
@@ -20,7 +20,7 @@ public class CustomerDao {
     private String sheetName = "Sheet1";
 
     public CustomerDao() {
-        this(Conts.Resource.XLSX_TT_CHUAN);
+        this(Conts.File.XLSX_TT_CHUAN);
         this.firstIndex = 1;
         this.sheetName = "CHUAN";
     }
@@ -73,16 +73,16 @@ public class CustomerDao {
     }
 
     public void mapTo(Customer bean, Row row) {
-        bean.setHoVaTen(cellToString(row.getCell(0)));
-        bean.setGioiTinh(cellToString(row.getCell(1)));
-        bean.setNgaySinh(cellToString(row.getCell(2)));
-        bean.setSoGiayTo(cellToString(row.getCell(3)));
+        bean.setHoVaTen(getCellStringValue(row.getCell(0)));
+        bean.setGioiTinh(getCellStringValue(row.getCell(1)));
+        bean.setNgaySinh(getCellStringValue(row.getCell(2)));
+        bean.setSoGiayTo(getCellStringValue(row.getCell(3)));
         //customer.setTen(cellToString(row.getCell(4)));
-        bean.setMaTinh(cellToString(row.getCell(5)));
+        bean.setMaTinh(getCellStringValue(row.getCell(5)));
         //customer.setTen(stringOf(row.getCell(6)));
-        bean.setNgayCap(cellToString(row.getCell(7)));
-        bean.setDiaChi(cellToString(row.getCell(8)));
-        bean.setMaHinh(cellToString(row.getCell(9)));
+        bean.setNgayCap(getCellStringValue(row.getCell(7)));
+        bean.setDiaChi(getCellStringValue(row.getCell(8)));
+        bean.setMaHinh(getCellStringValue(row.getCell(9)));
     }
 
     public void save(Customer customer) {

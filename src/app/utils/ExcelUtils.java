@@ -1,12 +1,7 @@
 package app.utils;
 
-import app.Conts;
-import app.model.Customer;
-import app.model.Sim;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFCellStyle;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
@@ -14,16 +9,13 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class ExcelUtils {
 
-    public static String cellToString(Cell cell) {
-        return getStringValue(cell);
-    }
-
-    public static String getStringValue(Cell cell) {
+    public static String getCellStringValue(Cell cell) {
         if (cell == null) return "";
         switch (cell.getCellType()) {
             case _NONE:
@@ -50,16 +42,16 @@ public class ExcelUtils {
         return "";
     }
 
-    public static String getStringValue(Row row, int cellIndex) {
+    public static String getCellStringValue(Row row, int cellIndex) {
         if (row == null) return "";
-        return getStringValue(row.getCell(cellIndex));
+        return getCellStringValue(row.getCell(cellIndex));
     }
 
-    public static int getIntValue(Row row, int cellIndex) {
-        return getIntValue(row.getCell(cellIndex));
+    public static int getCellIntValue(Row row, int cellIndex) {
+        return getCellIntValue(row.getCell(cellIndex));
     }
 
-    private static int getIntValue(Cell cell) {
+    private static int getCellIntValue(Cell cell) {
         if (cell == null) return -1;
         switch (cell.getCellType()) {
             case _NONE:
@@ -78,7 +70,7 @@ public class ExcelUtils {
         return -1;
     }
 
-    public static void setStringValue(Row row, int index, String value) {
+    public static void setCellStringValue(Row row, int index, String value) {
         if (row == null) return;
         row.createCell(index, CellType.STRING).setCellValue(value);
     }
@@ -89,7 +81,7 @@ public class ExcelUtils {
      * @param sheet    a Excel sheet
      * @param rowIndex a 0 based index of removing row
      */
-    public static void removeRow(Sheet sheet, int rowIndex) {
+    public static void deleteRow(Sheet sheet, int rowIndex) {
         int lastRowNum = sheet.getLastRowNum();
         if (rowIndex >= 0 && rowIndex < lastRowNum) {
             sheet.shiftRows(rowIndex + 1, lastRowNum, -1);
@@ -102,51 +94,49 @@ public class ExcelUtils {
         }
     }
 
-    public static int generateNewRow(Sheet sheet) {
-        return 0;
-    }
-
-    public static int getLastIndex(Sheet sheet) {
-        return 0;
-    }
-
-    public static class CcbsExcel {
-        public static void creat(List<Map<String, String>> data, String path) {
-
-            try {
-                FileInputStream is = new FileInputStream(Conts.Path.BASE_URL + "CCBS.xls");
-                Workbook wb = new HSSFWorkbook(is);
-                Sheet sheet = wb.getSheet("Sheet1");
-                int index = 0;
-                for (Map<String, String> map : data) {
-                    Row row = sheet.createRow(++index);
-                    setStringValue(row, 0, map.get("$sdt$"));
-                    setStringValue(row, 1, map.get("$seri$") + ".zip");
-                    setStringValue(row, 2, map.get("$ten$"));
-                    setStringValue(row, 3, map.get("$gioiTinh$"));
-                    setStringValue(row, 4, map.get("$ngaySinh$"));
-                    setStringValue(row, 5, map.get("$soGiayTo$"));
-                    setStringValue(row, 6, map.get("$maTinh$"));
-                    setStringValue(row, 7, map.get("$ngayCap$"));
-                    setStringValue(row, 8, map.get("$diaChi$"));
-                    setStringValue(row, 9, map.get("$maHinh1$"));
-                    setStringValue(row, 10, map.get("$maHinh2$"));
-                    setStringValue(row, 11, map.get("$maHinh3$"));
-                    setStringValue(row, 12, map.get("$maHinh4$"));
-                    setStringValue(row, 13, map.get("$pgd$"));
-                    setStringValue(row, 14, map.get("$diaChiPgd$"));
-                    setStringValue(row, 15, map.get("$dtPgd$"));
-                    setStringValue(row, 16, map.get("$daiDienPgd$"));
-                }
-                File file = new File(path + "CCBS_.xls");
-                FileOutputStream fou = new FileOutputStream(file);
-                wb.write(fou);
-                wb.close();
-                is.close();
-                fou.close();
-            } catch (IOException e) {
-                e.printStackTrace();
+    public static void createFileWithTemplate(String template, List<Map<String, String>> data, String path) {
+        try {
+            FileInputStream is = new FileInputStream(template);
+            Workbook wb;
+            if (template.endsWith("xlsx")) {
+                wb = new XSSFWorkbook(is);
+            } else if (template.endsWith("xls")) {
+                wb = new HSSFWorkbook(is);
+            } else {
+                throw new RuntimeException("File CCBS mẫu không hợp lệ");
             }
+            Sheet sheet = wb.getSheet("Sheet1");
+            Map<String, Integer> mappingData = getMappingData(sheet.getRow(1));
+            int index = 0;
+            for (Map<String, String> map : data) {
+                Row row = sheet.createRow(++index);
+                if (mappingData.containsKey("$index$")) {
+                    setCellStringValue(row, mappingData.get("$index$"), String.valueOf(index));
+                }
+                mappingData.forEach((s, cellIndex) -> {
+                    setCellStringValue(row, cellIndex, StringUtils.replaceString(s, map));
+                });
+            }
+            File file = new File(path + "CCBS_.xls");
+            FileOutputStream fou = new FileOutputStream(file);
+            wb.write(fou);
+            wb.close();
+            is.close();
+            fou.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+    }
+
+    private static Map<String, Integer> getMappingData(Row row) {
+        Map<String, Integer> map = new HashMap<>();
+        if (row == null) {
+            return map;
+        }
+        short lastCellNum = row.getLastCellNum();
+        for (int i = 0; i <= lastCellNum; i++) {
+            map.put(ExcelUtils.getCellStringValue(row, i), i);
+        }
+        return map;
     }
 }

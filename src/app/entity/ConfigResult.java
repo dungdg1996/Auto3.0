@@ -66,4 +66,12 @@ public class ConfigResult {
     public void setColor(Color color) {
         this.color = color;
     }
+
+    @Override
+    public String toString() {
+        return "ConfigResult{" +
+                "type='" + type + '\'' +
+                ", value='" + value + '\'' +
+                '}';
+    }
 }

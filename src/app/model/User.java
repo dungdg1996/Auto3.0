@@ -1,7 +1,7 @@
 package app.model;
 public class User {
     private Integer id;
-    private String tenGdv;
+    private String tenFileMau;
     private String khuVuc;
     private String pgd;
     private String diaChiPgd;
@@ -11,7 +11,7 @@ public class User {
 
     @Override
     public String toString() {
-        return tenGdv;
+        return tenFileMau;
     }
 
     public Integer getId() {
@@ -22,12 +22,12 @@ public class User {
         this.id = id;
     }
 
-    public String getTenGdv() {
-        return tenGdv;
+    public String getTenFileMau() {
+        return tenFileMau;
     }
 
-    public void setTenGdv(String tenGdv) {
-        this.tenGdv = tenGdv;
+    public void setTenFileMau(String tenFileMau) {
+        this.tenFileMau = tenFileMau;
     }
 
     public String getKhuVuc() {

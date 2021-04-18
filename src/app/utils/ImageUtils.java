@@ -9,13 +9,9 @@ public class ImageUtils {
     public static void crop(String in, String out) {
         try {
             BufferedImage originalImage = ImageIO.read(new File(in));
-
             BufferedImage subImage = originalImage.getSubimage(110, 1760, 450, 120);
-
             File outputFile = new File(out);
             ImageIO.write(subImage, "jpg", outputFile);
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -35,13 +31,10 @@ public class ImageUtils {
             g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION,RenderingHints.VALUE_INTERPOLATION_BILINEAR);
             g2d.setRenderingHint(RenderingHints.KEY_RENDERING,RenderingHints.VALUE_RENDER_QUALITY);
             g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
-
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-
             ImageIO.write(resizedImage, fileName.split("\\.")[1], byteArrayOutputStream);
             return new ByteArrayInputStream(byteArrayOutputStream.toByteArray());
         } catch (IOException e) {
-            // Something is going wrong while resizing image
             return uploadedInputStream;
         }
     }
@@ -54,6 +47,7 @@ public class ImageUtils {
         try {
             File[] files = folder.listFiles();
             int width = 1648, height = 2136;
+            assert files != null;
             BufferedImage sumImage = new BufferedImage(width, height*files.length,  BufferedImage.SCALE_SMOOTH );
             Graphics2D g2d = sumImage.createGraphics();
             g2d.setComposite(AlphaComposite.Src);

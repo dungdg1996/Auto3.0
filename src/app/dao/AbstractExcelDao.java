@@ -1,6 +1,5 @@
 package app.dao;
 
-import app.Conts;
 import app.model.BaseEntity;
 import app.utils.ExcelUtils;
 import org.apache.poi.ss.usermodel.Row;
@@ -19,6 +18,7 @@ import java.util.Objects;
 
 /**
  * Generic DAO class for xlsx file
+ *
  * @param <E> type of entity
  */
 public abstract class AbstractExcelDao<E extends BaseEntity> {
@@ -31,6 +31,7 @@ public abstract class AbstractExcelDao<E extends BaseEntity> {
 
     /**
      * Load excel file from file path
+     *
      * @param filePath path to xlsx file
      */
     public AbstractExcelDao(String filePath) {
@@ -48,9 +49,8 @@ public abstract class AbstractExcelDao<E extends BaseEntity> {
     /**
      * @return Class the class of entity
      */
-    @SuppressWarnings ("unchecked")
-    public Class<E> getTypeParameterClass()
-    {
+    @SuppressWarnings("unchecked")
+    public Class<E> getTypeParameterClass() {
         Type type = getClass().getGenericSuperclass();
         ParameterizedType paramType = (ParameterizedType) type;
         return (Class<E>) paramType.getActualTypeArguments()[0];
@@ -59,8 +59,9 @@ public abstract class AbstractExcelDao<E extends BaseEntity> {
 
     /**
      * mapping field in entity to excel row
+     *
      * @param entity list if entity
-     * @param row the row of excel file
+     * @param row    the row of excel file
      */
     public abstract void mappingEntityToRow(E entity, Row row);
 
@@ -71,7 +72,7 @@ public abstract class AbstractExcelDao<E extends BaseEntity> {
      */
     public void loadData() {
         entities.clear();
-        int lastIndex = ExcelUtils.getLastIndex(sheet);
+        int lastIndex = this.sheet.getLastRowNum();
         try {
             for (int i = startIndex; i <= lastIndex; i++) {
                 Row row = sheet.getRow(i);
@@ -85,6 +86,7 @@ public abstract class AbstractExcelDao<E extends BaseEntity> {
 
     /**
      * Get all data from excel file
+     *
      * @return list of entity
      */
     public List<E> findAll() {
@@ -105,6 +107,7 @@ public abstract class AbstractExcelDao<E extends BaseEntity> {
 
     /**
      * Save entity to excel file
+     *
      * @param entity
      */
     public void save(E entity) {
@@ -115,8 +118,7 @@ public abstract class AbstractExcelDao<E extends BaseEntity> {
         }
 
         if (Objects.isNull(row)) {
-            int rowId = ExcelUtils.generateNewRow(sheet);
-            row = sheet.createRow(rowId);
+            row = sheet.createRow(sheet.getLastRowNum() + 1);
         }
 
         mappingEntityToRow(entity, row);
@@ -124,6 +126,7 @@ public abstract class AbstractExcelDao<E extends BaseEntity> {
 
     /**
      * Delete entity
+     *
      * @param entity
      * @return
      */
@@ -132,7 +135,7 @@ public abstract class AbstractExcelDao<E extends BaseEntity> {
         if (!entity.equals(current)) {
             return false;
         }
-        ExcelUtils.removeRow(sheet, entity.getId());
+        ExcelUtils.deleteRow(sheet, entity.getId());
         return true;
     }
 

@@ -1,6 +1,6 @@
 package app.views;
 
-import app.Conts;
+import app.utils.AppUtils;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -17,7 +17,7 @@ public class Diag {
     public Diag(String fxml){
         try {
             stage = new Stage();
-            loader = Conts.openFXML(fxml);
+            loader = AppUtils.openFXML(fxml);
             Parent parent = loader.load();
             Scene scene = new Scene(parent);
             stage.setScene(scene);

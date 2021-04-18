@@ -35,11 +35,11 @@ public class UserDao {
     private void load() {
         users.clear();
         try {
-            workbook = new XSSFWorkbook(new FileInputStream(Conts.Resource.XLSX_USER));
+            workbook = new XSSFWorkbook(new FileInputStream(Conts.File.XLSX_USER));
             sheet = workbook.getSheetAt(0);
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("File not found: " + Conts.Resource.XLSX_USER);
+            System.out.println("File not found: " + Conts.File.XLSX_USER);
         }
         for (int i = 1; i <= sheet.getLastRowNum(); i++) {
             Row row = sheet.getRow(i);
@@ -47,7 +47,7 @@ public class UserDao {
             User user = new User();
             user.setId(i);
             user.setKhuVuc(row.getCell(0).getStringCellValue());
-            user.setTenGdv(row.getCell(1).getStringCellValue());
+            user.setTenFileMau(row.getCell(1).getStringCellValue());
             user.setPgd(row.getCell(2).getStringCellValue());
             user.setDiaChiPgd(row.getCell(3).getStringCellValue());
             user.setDtPgd(row.getCell(4).getStringCellValue());
@@ -73,7 +73,7 @@ public class UserDao {
             user.setId(users.size() + 1);
             row = sheet.createRow(user.getId());
             row.createCell(0).setCellValue(user.getKhuVuc());
-            row.createCell(1).setCellValue(user.getTenGdv());
+            row.createCell(1).setCellValue(user.getTenFileMau());
             row.createCell(2).setCellValue(user.getPgd());
             row.createCell(3).setCellValue(user.getDiaChiPgd());
             row.createCell(4).setCellValue(user.getDtPgd());
@@ -82,7 +82,7 @@ public class UserDao {
         } else {
             row = sheet.getRow(user.getId());
             row.getCell(0).setCellValue(user.getKhuVuc());
-            row.getCell(1).setCellValue(user.getTenGdv());
+            row.getCell(1).setCellValue(user.getTenFileMau());
             row.getCell(2).setCellValue(user.getPgd());
             row.getCell(3).setCellValue(user.getDiaChiPgd());
             row.getCell(4).setCellValue(user.getDtPgd());
@@ -95,12 +95,12 @@ public class UserDao {
     }
 
     public void delete(int userId) {
-        ExcelUtils.removeRow(sheet, userId);
+        ExcelUtils.deleteRow(sheet, userId);
     }
 
     public void commit() {
         try {
-            FileOutputStream os = new FileOutputStream(Conts.Resource.XLSX_USER);
+            FileOutputStream os = new FileOutputStream(Conts.File.XLSX_USER);
             workbook.write(os);
         } catch (IOException e) {
             throw new RuntimeException("Lỗi lưu file User.xlsx");

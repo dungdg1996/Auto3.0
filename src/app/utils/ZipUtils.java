@@ -41,13 +41,21 @@ public class ZipUtils {
             fis.close();
         }
 
-        public void add(String path) throws IOException {
+        public void add(String path) {
             File aFile = new File(path);
-            add(aFile);
+            try {
+                add(aFile);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
-        public void close() throws IOException {
-            zipStream.close();
+        public void close() {
+            try {
+                zipStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

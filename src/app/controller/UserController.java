@@ -75,7 +75,7 @@ public class UserController implements Initializable {
 
     public void setUser(User user) {
         this.userId = user.getId();
-        this.ten.setText(user.getTenGdv());
+        this.ten.setText(user.getTenFileMau());
         this.pgd.setText(user.getPgd());
         this.diaChiPgd.setText(user.getDiaChiPgd());
         this.sdtPgd.setText(user.getDtPgd());
@@ -128,7 +128,7 @@ public class UserController implements Initializable {
     @FXML
     public void choseFolder(Event event) {
         DirectoryChooser chooser = new DirectoryChooser();
-        chooser.setInitialDirectory(new File(Conts.Path.BASE_URL + "MAU"));
+        chooser.setInitialDirectory(new File(Conts.Path.ANH_HD_MAU));
         chooser.setTitle("Chọn thư mục mẫu");
         File file = chooser.showDialog(((Node) event.getSource()).getScene().getWindow());
         if (file != null) path.setText(file.getPath());
@@ -140,7 +140,7 @@ public class UserController implements Initializable {
         User user = new User();
         user.setKhuVuc(khuVuc.getSelectionModel().getSelectedItem());
         user.setId(userId);
-        user.setTenGdv(ten.getText());
+        user.setTenFileMau(ten.getText());
         user.setPgd(pgd.getText());
         user.setDiaChiPgd(diaChiPgd.getText());
         user.setDtPgd(sdtPgd.getText());
@@ -163,7 +163,7 @@ public class UserController implements Initializable {
 
     private String valid(User user) {
         if (user.getPath() == null || user.getPath().isEmpty()) return "Bạn chưa chọn file mẫu";
-        if (user.getTenGdv() == null || user.getTenGdv().isEmpty()) return "Tên user không được trống";
+        if (user.getTenFileMau() == null || user.getTenFileMau().isEmpty()) return "Tên user không được trống";
         if (user.getPgd() == null || user.getPgd().isEmpty()) return "Bạn chưa nhập tên PGD";
         if (user.getDiaChiPgd() == null || user.getDiaChiPgd().isEmpty()) return "Bạn chưa nhập địa chỉ PGD";
         if (user.getDtPgd() == null || user.getDtPgd().isEmpty()) return "Bạn chưa nhập SDT PGD";
