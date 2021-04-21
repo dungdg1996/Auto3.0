@@ -8,14 +8,14 @@ import app.dao.UserDao;
 import app.model.Customer;
 import app.model.Sim;
 import app.model.User;
-import app.process.ProcessManager;
+import app.process.Finder;
 import app.process.ProcessBuilder;
+import app.process.ProcessManager;
 import app.views.AlertLogger;
 import app.views.Diag;
 import app.views.UserDetailsDialog;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -25,6 +25,7 @@ import javafx.stage.FileChooser;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -116,15 +117,14 @@ public class CcbsController {
     private Label sumCustomer;
 
     private boolean running = false;
-    private String log = "";
-    private double done = 0.0;
-    private int max;
+    private double done;
+    private double max;
 
     private final AlertLogger logger = AlertLogger.getInstance();
     private final UserDao userDao = UserDao.getInstance();
 
 
-    public void process(ActionEvent event) {
+    public void process() {
         if (running) return;
 
         if (tb_customer.getItems().size() == 0 || tb_sim.getItems().size() == 0) {
@@ -181,11 +181,13 @@ public class CcbsController {
         };
         task.setOnSucceeded(event1 -> {
             processBar.setProgress(1.0);
-            log = log.length() > 0 ? log = "Chưa có chữ ký của file: " + log : "";
-            logger.show(Alert.AlertType.INFORMATION, "Xong", log);
             start_bt.setText("Bắt đầu");
             running = false;
-            log = "";
+            checkChuKy(customers);
+        });
+        task.setOnFailed(evt -> {
+            System.err.println("The task failed with the following exception:");
+            task.getException().printStackTrace(System.err);
         });
         new Thread(task).start();
     }
@@ -229,23 +231,17 @@ public class CcbsController {
             addSimController.callBack(this);
             diag.show();
         });
-        themKhMenu.setOnAction(event -> {
-            mainController.danhSachPane.toFront();
-        });
+        themKhMenu.setOnAction(event -> mainController.danhSachPane.toFront());
         customerDelete.setOnAction(event -> {
             Customer selectedItem = tb_customer.getSelectionModel().getSelectedItem();
             tb_customer.getItems().remove(selectedItem);
         });
-        customerDeleteAll.setOnAction(event -> {
-            tb_customer.setItems(observableArrayList());
-        });
+        customerDeleteAll.setOnAction(event -> tb_customer.setItems(observableArrayList()));
         sdtDelete.setOnAction(event -> {
             Sim selectedItem = tb_sim.getSelectionModel().getSelectedItem();
             tb_sim.getItems().remove(selectedItem);
         });
-        sdtDeleteAll.setOnAction(event -> {
-            tb_sim.setItems(observableArrayList());
-        });
+        sdtDeleteAll.setOnAction(event -> tb_sim.setItems(observableArrayList()));
         maVungCbb.setOnAction(event ->
                 fileMauCbb.setItems(
                         observableArrayList(userDao.findByKhuVuc(maVungCbb.getSelectionModel().getSelectedItem())))
@@ -299,7 +295,7 @@ public class CcbsController {
 
         editBt.setOnAction(event -> {
             User user = fileMauCbb.getSelectionModel().getSelectedItem();
-            if (user != null){
+            if (user != null) {
                 new UserDetailsDialog(user).showAndWait();
             }
         });
@@ -327,8 +323,9 @@ public class CcbsController {
         Task<Void> task = new Task<>() {
             @Override
             public Void call() {
-                for (int i = 0; i < process; i++) {
-                    updateProcess();
+                for (int i = 0; i < 100; i++) {
+                    countingProcess();
+
                     try {
                         Thread.sleep(10);
                     } catch (InterruptedException e) {
@@ -341,21 +338,36 @@ public class CcbsController {
         new Thread(task).start();
     }
 
-    final static int process = 100;
-
-    private synchronized void updateProcess() {
-        done += 1.0 / process;
+    private synchronized void countingProcess() {
+        done+= 0.01;
         processBar.setProgress(done / max);
     }
 
-    public void updateTable(Customer customer) {
-        ObservableList<Customer> items = tb_customer.getItems();
-        for (int i = 0; i < items.size(); i++) {
-            if (items.get(i).equals(customer)) items.set(i, customer);
+    private void checkChuKy(List<Customer> customers) {
+        Finder finder = Finder.getInstance();
+        StringBuilder log = new StringBuilder();
+        HashSet<Customer> set = new HashSet<>();
+        for (Customer customer : customers) {
+            if (!finder.haveResult(customer.getSoGiayTo())) {
+                set.add(customer);
+            }
+        }
+        for (Customer customer : set) {
+            log.append("\n").append(customer.getHoVaTen()).append(" : ").append(customer.getMaHinh());
+        }
+
+        if (log.length() > 0) {
+            logger.show(Alert.AlertType.WARNING, "Chú ý", "Chưa có chữ ký của file: " + log.toString());
+        } else {
+            logger.show(Alert.AlertType.INFORMATION, "Xong");
         }
     }
 
-    public void addLog(String s) {
-        log += "\n" + s;
+    public void setDone(double done) {
+        this.done = done;
+    }
+
+    public void setMax(int max) {
+        this.max = max;
     }
 }

@@ -24,10 +24,7 @@ public class Conts {
         public static final String XLSX_TT_CHUAN = System.getProperty("$THONG_TIN_CHUAN_XLSX$");
         public final static String XLSX_USER = System.getProperty("$USER_XLSX$");
         public final static String XLS_CCBS = System.getProperty("$CCBS_MAU_XLS$");
-    }
-
-    public static class Page {
-
+        public final static String XLSX_CCBS = System.getProperty("$CCBS_MAU_XLSX$");
     }
 
     public static class Extension {

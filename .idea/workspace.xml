@@ -6,214 +6,19 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="3.0">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Auto3_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/appConfig.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/commons-codec-1.15.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/commons-collections4-4.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/commons-compress-1.20.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/commons-math3-3.6.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jfxtras-styles-11.6.8.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jmetro-11.6.8.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/poi-5.0.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/poi-ooxml-5.0.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/poi-ooxml-full-5.0.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/xmlbeans-4.0.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Auto2_1_FXColection_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Auto3_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/activation_1_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/activation_1_1_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jmetro_11_6_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jmetro_11_6_8.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_13.xml" beforeDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Complete v3.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auto2.1_FXColection.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Auto2.1_FXColection.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Auto2_1_FXColection_jar/Auto2.1_FXColection.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Auto3_0/Auto2.1_FXColection.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/Launcher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/AppContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/Conts$Extension.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/Conts$InputType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/Conts$Page.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/Conts$Path.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/Conts$Resource.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/Conts.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/contract/ContractImage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/controller/AddSimController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/controller/CcbsController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/controller/CcbsController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/controller/CcbsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/controller/CreateCustomerController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/controller/CreateCustomerController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/controller/DanhSachController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/controller/DanhSachController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/controller/DanhSachController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/controller/MainController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/dao/AbstractExcelDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/dao/ConfigDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/dao/CustomerDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/dao/SimDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/dao/UserDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/entity/ConfigData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/entity/ConfigResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/model/AutoEnum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/model/BaseEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/model/Customer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/model/MaTinh.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/model/Sim.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/processor/Finder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/processor/FormProcess.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/processor/ProcessBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/processor/ProcessManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/utils/AppUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/utils/ConnectionUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/utils/ExcelUtils$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/utils/ExcelUtils$CcbsExcel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/utils/ExcelUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/utils/FileUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/utils/ImageUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/utils/StringUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/utils/ViewUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/utils/ZipUtils$Zip.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/utils/ZipUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/validation/AbstractValidator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/validation/Errors.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/validation/ValidationException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/validation/Validator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/views/AlertLogger$SingletonAlertLogger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/views/AlertLogger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/views/Diag.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/views/Site.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/app/views/UserDetailsDialog.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/fxml/add.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/fxml/ccbs.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/fxml/danhsach.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/fxml/exportccbs.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/fxml/main.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/fxml/smcs.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/fxml/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/fxml/them-sdt.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/fxml/user.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/A.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/autograph_100px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/back_arrow_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/back_arrow_50px_blue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/calendar_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/close_window_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/delete_20px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/delete_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/edit_24px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/edit_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/facebook_old_100px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/facebook_old_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/fast_forward_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/full_stop_20px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/full_stop_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/img_600x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/list_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/login_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/minus_20px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/minus_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/people_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/person_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/plus_math_26px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/plus_math_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/rewind_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/save_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/search_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/themes_100px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/update_left_rotation_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/icon/xing_32px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/image/Untitled-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/macmnd.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/matinh.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/message/sys_message.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/fxml/add.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/fxml/ccbs.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/fxml/danhsach.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/fxml/exportccbs.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/fxml/main.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/fxml/smcs.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/fxml/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/fxml/them-sdt.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/fxml/user.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/A.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/autograph_100px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/back_arrow_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/back_arrow_50px_blue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/calendar_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/close_window_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/delete_20px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/delete_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/edit_24px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/edit_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/facebook_old_100px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/facebook_old_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/fast_forward_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/full_stop_20px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/full_stop_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/img_600x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/list_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/login_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/minus_20px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/minus_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/people_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/person_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/plus_math_26px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/plus_math_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/rewind_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/save_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/search_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/themes_100px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/update_left_rotation_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/icon/xing_32px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/image/Untitled-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/macmnd.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/matinh.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/message/sys_message.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/style/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/style/style1.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/style/stylesheet.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/style/sys.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/resources/style/tabpane.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/style/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/style/style1.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/style/stylesheet.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/style/sys.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Auto2.1_FXColection/style/tabpane.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appConfig.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/autoConfig.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Launcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Conts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Conts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/contract/ContractImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/contract/ContractImage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/controller/CcbsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controller/CcbsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controller/DanhSachController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controller/DanhSachController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dao/AbstractExcelDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dao/AbstractExcelDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dao/ConfigDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dao/ConfigDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dao/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dao/CustomerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dao/SimDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dao/SimDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/entity/ConfigResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/entity/ConfigResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/processor/Finder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/process/Finder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/processor/FormProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/process/FormProcess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/processor/ProcessBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/process/ProcessBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/processor/ProcessManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/process/ProcessManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/process/FormProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/process/FormProcess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/process/ProcessManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/process/ProcessManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/utils/AppUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/AppUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/utils/ConnectionUtils.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/utils/ExcelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/ExcelUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/utils/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/FileUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/utils/ImageUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/ImageUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/utils/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/StringUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/utils/ZipUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/ZipUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/Diag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/Diag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/Site.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/Site.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/UserDetailsDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/UserDetailsDialog.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -322,7 +127,7 @@
     <property name="dynamic.classpath" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/poi-ooxml-full-5.0.0.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -342,9 +147,9 @@
       <recent name="app.validation" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dungd\IdeaProjects\Auto3.0" />
       <recent name="C:\Users\dungd\IdeaProjects\Auto3.0\out\artifacts\Auto3_0_jar" />
       <recent name="C:\Users\dungd\IdeaProjects\Auto3.0\lib" />
-      <recent name="C:\Users\dungd\IdeaProjects\Auto3.0" />
       <recent name="D:\IntelliJIDEAProjects\Auto2.1_HUNG YEN\src\resources\icon" />
       <recent name="D:\IntelliJIDEAProjects\Auto2.1_HUNG YEN\src\app\profile" />
     </key>
@@ -581,7 +386,9 @@
       <workItem from="1618404671951" duration="4023000" />
       <workItem from="1618621200887" duration="27808000" />
       <workItem from="1618652169512" duration="8053000" />
-      <workItem from="1618730968172" duration="13210000" />
+      <workItem from="1618730968172" duration="16096000" />
+      <workItem from="1618751587719" duration="2383000" />
+      <workItem from="1619010248107" duration="6460000" />
     </task>
     <task id="LOCAL-00001" summary="add module taofile nhanh">
       <created>1585897300802</created>
@@ -681,7 +488,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596608440005</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Complete v3.0">
+      <created>1618744792155</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1618744792155</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -720,6 +534,7 @@
     <MESSAGE value="Sua loi nho" />
     <MESSAGE value="auto /" />
     <MESSAGE value="3.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="3.0" />
+    <MESSAGE value="Complete v3.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Complete v3.0" />
   </component>
 </project>

@@ -64,11 +64,12 @@ public class ContractImage {
     }
 
     public void drawImg(String imgName, int x, int y, String align) {
-
+        if (imgName == null) return;
         try {
             Image image = ImageIO.read(new FileInputStream(imgName));
             this.drawImg(image, x, y, align);
-        } catch (IOException e) {
+        } catch (Exception e) {
+            System.out.println(imgName);
             e.printStackTrace();
         }
     }

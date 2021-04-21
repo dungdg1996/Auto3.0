@@ -36,8 +36,6 @@ public class ProcessManager {
     protected CcbsController controller;
     private final List<FormProcess> processes = new ArrayList<>();
 
-    protected Finder finder = Finder.getInstance();
-
     public ProcessManager(ProcessBuilder builder) {
         this.sims = builder.getSims();
         this.customers = builder.getCustomers();
@@ -74,15 +72,18 @@ public class ProcessManager {
 
     public void run() {
         List<Map<String, String>> listData = processData();
+        if (this.controller != null) {
+            this.controller.setDone(0.);
+            this.controller.setMax(listData.size() + 1);
+        }
+
         for (Map<String, String> data : listData) {
 
             if (data.get("$dataFlag$").equals(FLAG_BODY)) {
                 for (FormProcess formProcess : this.processes) {
                     formProcess.process(data);
-                    update(customers.get(Integer.parseInt(data.get("$customerIndex$"))));
                 }
             }
-
             if (data.get("$dataFlag$").equals(FLAG_BREAK)) {
                 for (FormProcess formProcess : this.processes) {
                     final String currPath = path + data.get("$maHinh4$");
@@ -90,14 +91,18 @@ public class ProcessManager {
                     formProcess.checkWrite(sdtLimit, soLuongSdt);
                     formProcess.saveForm(currPath);
                     formProcess.clear();
-
                 }
                 final String currPath = path + data.get("$maHinh4$");
-                if (zip) ZipUtils.archiveFile(currPath);
+                if (zip) ZipUtils.toArchive(currPath);
             }
-
+            if (controller != null) controller.upToProcess();
         }
-        if (excel) ExcelUtils.createFileWithTemplate(Conts.File.XLS_CCBS, listData, path);
+        if (excel) {
+            ExcelUtils.createFileWithTemplate(Conts.File.XLS_CCBS, listData, path);
+        } else {
+            ExcelUtils.createFileWithTemplate(Conts.File.XLSX_CCBS, listData, path);
+        }
+        controller.upToProcess();
     }
 
     private List<Map<String, String>> processData() {
@@ -138,17 +143,10 @@ public class ProcessManager {
             while (maHd.length() < 6) maHd = "0" + maHd;
             curr = customer.getSoGiayTo();
         }
-        return listData;
-    }
-
-    private void update(Customer customer) {
-        if (controller != null) {
-            if (!finder.haveResult(customer.getSoGiayTo()))
-                controller.addLog(customer.getHoVaTen() + " : " + customer.getMaHinh());
-            controller.updateTable(customer);
-            for (int i = 0; i < 1; i++) {
-                controller.upToProcess();
-            }
+        int i = 0;
+        for (Map<String, String> listDatum : listData) {
+            System.out.println(i + " : " + listDatum.get("$dataFlag$") + ": " + listDatum);
         }
+        return listData;
     }
 }

@@ -13,6 +13,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static app.process.ProcessManager.FLAG_BREAK;
+
 public class ExcelUtils {
 
     public static String getCellStringValue(Cell cell) {
@@ -103,21 +105,19 @@ public class ExcelUtils {
             } else if (template.endsWith("xls")) {
                 wb = new HSSFWorkbook(is);
             } else {
+                System.out.println("File CCBS mẫu không hợp lệ");
                 throw new RuntimeException("File CCBS mẫu không hợp lệ");
             }
             Sheet sheet = wb.getSheet("Sheet1");
             Map<String, Integer> mappingData = getMappingData(sheet.getRow(1));
             int index = 0;
             for (Map<String, String> map : data) {
+                if (map.get("$dataFlag$").equals(FLAG_BREAK)) continue;
                 Row row = sheet.createRow(++index);
-                if (mappingData.containsKey("$index$")) {
-                    setCellStringValue(row, mappingData.get("$index$"), String.valueOf(index));
-                }
-                mappingData.forEach((s, cellIndex) -> {
-                    setCellStringValue(row, cellIndex, StringUtils.replaceString(s, map));
-                });
+                map.put("$index$", String.valueOf(index));
+                mappingData.forEach((s, cellIndex) -> setCellStringValue(row, cellIndex, StringUtils.replaceString(s, map)));
             }
-            File file = new File(path + "CCBS_.xls");
+            File file = new File(path + new File(template).getName());
             FileOutputStream fou = new FileOutputStream(file);
             wb.write(fou);
             wb.close();

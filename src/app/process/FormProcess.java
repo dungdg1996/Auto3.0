@@ -146,9 +146,7 @@ public class FormProcess {
             return;
         }
         ContractImage contractImage = new ContractImage(input);
-        results.forEach((index, configResult) -> {
-            contractImage.draw(configResult);
-        });
+        results.forEach((index, configResult) -> contractImage.draw(configResult));
         contractImage.save(path + "\\" + new File(input).getName());
     }
 

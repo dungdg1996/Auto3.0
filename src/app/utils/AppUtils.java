@@ -29,7 +29,7 @@ public class AppUtils {
             Workbook wb = new XSSFWorkbook(is);
             Sheet sheet = wb.getSheet("data");
             int lastRowNum = sheet.getLastRowNum();
-            for (int i = 0; i <= lastRowNum; i++) {
+            for (int i = 1; i <= lastRowNum; i++) {
                 String key = ExcelUtils.getCellStringValue(sheet.getRow(i), 0);
                 String value = ExcelUtils.getCellStringValue(sheet.getRow(i), 1);
                 if (key.isEmpty()) continue;

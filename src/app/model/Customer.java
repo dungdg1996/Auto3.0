@@ -64,19 +64,6 @@ public class Customer {
         return MaTinh.getName(maTinh);
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Customer customer = (Customer) o;
-        return soGiayTo.equals(customer.soGiayTo);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(soGiayTo);
-    }
-
     public int getIndex() {
         return index;
     }
@@ -294,5 +281,18 @@ public class Customer {
 
     public ObservableValue<Boolean> getSelected() {
         return this.selected;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Customer customer = (Customer) o;
+        return soGiayTo.equals(customer.soGiayTo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(soGiayTo);
     }
 }
