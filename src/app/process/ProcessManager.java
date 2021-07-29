@@ -9,9 +9,13 @@ import app.model.Sim;
 import app.model.User;
 import app.utils.AppUtils;
 import app.utils.ExcelUtils;
+import app.utils.ImageUtils;
 import app.utils.ZipUtils;
 
+import java.awt.*;
+import java.io.File;
 import java.util.*;
+import java.util.List;
 
 public class ProcessManager {
 
@@ -91,9 +95,13 @@ public class ProcessManager {
                     formProcess.checkWrite(sdtLimit, soLuongSdt);
                     formProcess.saveForm(currPath);
                     formProcess.clear();
+                    if (controller != null) controller.updateTable(customers.get(Integer.parseInt(data.get("$customerIndex$"))));
                 }
                 final String currPath = path + data.get("$maHinh4$");
+                // zip file
                 if (zip) ZipUtils.toArchive(currPath);
+                // merge all image
+                if (jpg) ImageUtils.mergeAll(currPath);
             }
             if (controller != null) controller.upToProcess();
         }

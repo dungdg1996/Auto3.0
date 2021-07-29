@@ -183,7 +183,7 @@ public class CcbsController {
             processBar.setProgress(1.0);
             start_bt.setText("Bắt đầu");
             running = false;
-            checkChuKy(customers);
+            logger.show(Alert.AlertType.INFORMATION, "Xong", checkChuKy(customers));
         });
         task.setOnFailed(evt -> {
             System.err.println("The task failed with the following exception:");
@@ -319,6 +319,13 @@ public class CcbsController {
         sumCustomer.setText(String.valueOf(customer));
     }
 
+    public void updateTable(Customer customer) {
+        ObservableList<Customer> items = tb_customer.getItems();
+        for (int i = 0; i < items.size(); i++) {
+            if (items.get(i).equals(customer)) items.set(i, customer);
+        }
+    }
+
     public void upToProcess() {
         Task<Void> task = new Task<>() {
             @Override
@@ -343,7 +350,7 @@ public class CcbsController {
         processBar.setProgress(done / max);
     }
 
-    private void checkChuKy(List<Customer> customers) {
+    private String checkChuKy(List<Customer> customers) {
         Finder finder = Finder.getInstance();
         StringBuilder log = new StringBuilder();
         HashSet<Customer> set = new HashSet<>();
@@ -355,12 +362,10 @@ public class CcbsController {
         for (Customer customer : set) {
             log.append("\n").append(customer.getHoVaTen()).append(" : ").append(customer.getMaHinh());
         }
-
         if (log.length() > 0) {
-            logger.show(Alert.AlertType.WARNING, "Chú ý", "Chưa có chữ ký của file: " + log.toString());
-        } else {
-            logger.show(Alert.AlertType.INFORMATION, "Xong");
+           return  "Chưa có chữ ký của file: " + log.toString();
         }
+        return "";
     }
 
     public void setDone(double done) {
