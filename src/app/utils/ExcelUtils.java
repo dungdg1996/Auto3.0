@@ -39,7 +39,7 @@ public class ExcelUtils {
                 if (cell.getBooleanCellValue()) return "true";
                 return "false";
             case ERROR:
-                return "ERRO";
+                return "ERROR";
         }
         return "";
     }

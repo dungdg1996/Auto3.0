@@ -3,6 +3,7 @@ package app.controller;
 import app.Conts.InputType;
 import app.Main;
 import app.dao.CustomerDao;
+import app.dao.SimCustomerDao;
 import app.dao.SimDao;
 import app.dao.UserDao;
 import app.model.Customer;
@@ -199,7 +200,7 @@ public class CcbsController {
         maVungCbb.setItems(observableArrayList("HCM", "HYN"));
         maVungCbb.getSelectionModel().select(0);
         fileMauCbb.setItems(observableArrayList(userDao.findByKhuVuc(maVungCbb.getSelectionModel().getSelectedItem())));
-        fileTypeCbb.setItems(observableArrayList("SĐT-SERI-OTP", "Thông tin khách hàng", "SĐT-SERI-OTP-CMND"));
+        fileTypeCbb.setItems(observableArrayList("SĐT-SERI-OTP", "Thông tin khách hàng", "SĐT-SERI-OTP-CMND", "SIM-SERI-Thông tin khách hàng"));
         fileTypeCbb.getSelectionModel().select(2);
         soTbSp.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 50, 45));
         zipCb.setSelected(true);
@@ -265,25 +266,56 @@ public class CcbsController {
                     updateSum();
                     break;
                 }
-                case InputType.OLD_FILE: {
+                case InputType.SIM_SERI_OTP_CMND: {
                     ArrayList<Sim> sims = new SimDao(file.getPath()).findAll();
                     ArrayList<Customer> allCustomers = new CustomerDao().findAll();
                     tb_sim.setItems(observableArrayList(sims));
-
+                    StringBuilder builder = new StringBuilder();
                     List<Customer> customers = sims.stream()
                             .map(ccbsSim -> allCustomers.stream()
                                     .filter(customer -> customer
                                             .getSoGiayTo()
                                             .equals(ccbsSim.getSoGiayTo()))
                                     .findAny().orElseGet(() -> {
-                                        logger.show(ccbsSim.getSoGiayTo());
+                                        builder.append("Không tìm thấy thông tin của CMND: '")
+                                                .append(ccbsSim.getSoGiayTo()).append("'\n");logger.show(ccbsSim.getSoGiayTo());
                                         return null;
                                     }))
                             .filter(Objects::nonNull)
                             .collect(Collectors.toList());
+                    if(!builder.toString().isBlank()) {
+                        logger.show(builder.toString());
+                    }
                     tb_customer.setItems(observableArrayList(customers));
                     soTbSp.valueFactoryProperty().get().setValue(1);
                     updateSum();
+                    break;
+                }
+                case InputType.SIM_SERI_OTP_CUSTOMER: {
+                    SimCustomerDao simCustomerDao = new SimCustomerDao(file.getPath());
+                    ArrayList<Sim> sims = simCustomerDao.findAllSim();
+                    ArrayList<Customer> allCustomers = simCustomerDao.findAllCustomer();
+                    StringBuilder builder = new StringBuilder();
+                    List<Customer> customers = sims.stream()
+                            .map(ccbsSim -> allCustomers.stream()
+                                    .filter(customer -> customer
+                                            .getSoGiayTo()
+                                            .equals(ccbsSim.getSoGiayTo()))
+                                    .findAny().orElseGet(() -> {
+                                        builder.append("Không tìm thấy thông tin của CMND: '")
+                                                .append(ccbsSim.getSoGiayTo()).append("'\n");
+                                        return null;
+                                    }))
+                            .filter(Objects::nonNull)
+                            .collect(Collectors.toList());
+                    if(!builder.toString().isBlank()) {
+                        logger.show(builder.toString());
+                    }
+                    tb_customer.setItems(observableArrayList(customers));
+                    tb_sim.setItems(observableArrayList(sims));
+                    soTbSp.valueFactoryProperty().get().setValue(1);
+                    updateSum();
+                    break;
                 }
             }
         });
@@ -363,7 +395,7 @@ public class CcbsController {
             log.append("\n").append(customer.getHoVaTen()).append(" : ").append(customer.getMaHinh());
         }
         if (log.length() > 0) {
-           return  "Chưa có chữ ký của file: " + log.toString();
+           return  "Chưa có chữ ký của file: " + log;
         }
         return "";
     }

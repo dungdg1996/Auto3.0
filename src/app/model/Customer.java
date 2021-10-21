@@ -295,4 +295,37 @@ public class Customer {
     public int hashCode() {
         return Objects.hash(soGiayTo);
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "index=" + index +
+                ", hoVaTen='" + hoVaTen + '\'' +
+                ", ten='" + ten + '\'' +
+                ", gioiTinh='" + gioiTinh + '\'' +
+                ", ngaySinh='" + ngaySinh + '\'' +
+                ", soGiayTo='" + soGiayTo + '\'' +
+                ", maTinh='" + maTinh + '\'' +
+                ", ngayCap='" + ngayCap + '\'' +
+                ", diaChi='" + diaChi + '\'' +
+                ", maHinh='" + maHinh + '\'' +
+                ", maHinh1='" + maHinh1 + '\'' +
+                ", maHinh2='" + maHinh2 + '\'' +
+                ", maHinh3='" + maHinh3 + '\'' +
+                ", maHinh4='" + maHinh4 + '\'' +
+                ", sdt='" + sdt + '\'' +
+                ", seri='" + seri + '\'' +
+                ", maHD='" + maHD + '\'' +
+                ", pgd='" + pgd + '\'' +
+                ", dtPgd='" + dtPgd + '\'' +
+                ", diaChiPgd='" + diaChiPgd + '\'' +
+                ", daiDienPgd='" + daiDienPgd + '\'' +
+                ", ghiChu='" + ghiChu + '\'' +
+                ", otp='" + otp + '\'' +
+                ", loaiGiayTo='" + loaiGiayTo + '\'' +
+                ", noiCap='" + noiCap + '\'' +
+                ", quocTich='" + quocTich + '\'' +
+                ", selected=" + selected +
+                '}';
+    }
 }

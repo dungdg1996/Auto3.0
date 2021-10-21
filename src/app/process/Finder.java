@@ -14,17 +14,21 @@ public class Finder {
 
     private static final Finder instance = new Finder();
     private final File root;
-    private final Map<String, String> result;
+    private final Map<String, String> resultMap;
     private final Random random;
 
     private Finder() {
         this.root = new File(Conts.Path.CHU_KY_MAU);
         this.random = new Random();
-        this.result = new HashMap<>();
+        this.resultMap = new HashMap<>();
+    }
+
+    public Map<String, String> getResultMap() {
+        return resultMap;
     }
 
     public String findByName(String key, String soGiayTo) {
-        if (result.containsKey(soGiayTo)) return result.get(soGiayTo);
+        if (resultMap.containsKey(soGiayTo)) return resultMap.get(soGiayTo);
         String KEY = StringUtils.removeAccent(key).toUpperCase().trim();
         FilenameFilter filter = (dir, name) -> {
             String[] list = name.split("_");
@@ -37,7 +41,7 @@ public class Finder {
         String[] list = root.list(filter);
         if (list == null || list.length == 0) return null;
         String fileName = Conts.Path.CHU_KY_MAU + "\\" + list[random.nextInt(list.length)];
-        result.put(soGiayTo, fileName);
+        resultMap.put(soGiayTo, fileName);
         return fileName;
     }
 
@@ -46,6 +50,6 @@ public class Finder {
     }
 
     public boolean haveResult(String soGiayTo) {
-        return result.containsKey(soGiayTo);
+        return resultMap.containsKey(soGiayTo);
     }
 }

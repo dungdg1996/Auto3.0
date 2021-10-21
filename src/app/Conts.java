@@ -38,6 +38,7 @@ public class Conts {
     public static class InputType {
         public static final int SIM_FILE = 0;
         public static final int CUSTOMER_FILE = 1;
-        public static final int OLD_FILE = 2;
+        public static final int SIM_SERI_OTP_CMND = 2;
+        public static final int SIM_SERI_OTP_CUSTOMER = 3;
     }
 }

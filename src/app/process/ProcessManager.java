@@ -12,8 +12,6 @@ import app.utils.ExcelUtils;
 import app.utils.ImageUtils;
 import app.utils.ZipUtils;
 
-import java.awt.*;
-import java.io.File;
 import java.util.*;
 import java.util.List;
 
@@ -71,7 +69,7 @@ public class ProcessManager {
             ArrayList<ConfigData> configs = configDao.getData(img);
             this.processes.add(new FormProcess(configs, Conts.Path.ANH_HD_MAU + "\\" + user.getTenFileMau() + "\\" + img));
         });
-        this.sdtLimit = this.processes.stream().map(FormProcess::getSl).min(Integer::compare).orElse(0);
+        this.sdtLimit = this.processes.stream().map(FormProcess::getMaxValue).min(Integer::compare).orElse(0);
     }
 
     public void run() {
@@ -95,7 +93,10 @@ public class ProcessManager {
                     formProcess.checkWrite(sdtLimit, soLuongSdt);
                     formProcess.saveForm(currPath);
                     formProcess.clear();
-                    if (controller != null) controller.updateTable(customers.get(Integer.parseInt(data.get("$customerIndex$"))));
+                    if (controller != null) {
+                        Customer customer = customers.get(Integer.parseInt(data.get("$customerIndex$")));
+                        controller.updateTable(customer);
+                    }
                 }
                 final String currPath = path + data.get("$maHinh4$");
                 // zip file
@@ -130,6 +131,7 @@ public class ProcessManager {
 
             int i = 0;
             while (curr.equals(customer.getSoGiayTo())) {
+                sim.setSoGiayTo(customer.getSoGiayTo());
                 AppUtils.merge(data, sim);
                 data.put("$sdtIndex$", String.valueOf(++i));
                 data.put("$customerIndex$", String.valueOf(index));

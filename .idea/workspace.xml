@@ -7,12 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Complete v3.0">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/dao/SimCustomerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Auto3_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Auto3_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Conts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Conts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/controller/CcbsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controller/CcbsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/model/AutoEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/process/Finder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/process/Finder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/process/FormProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/process/FormProcess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/process/ProcessManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/process/ProcessManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/utils/ImageUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/ImageUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/utils/AppUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/AppUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/utils/ExcelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/ExcelUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +135,7 @@
     <property name="dynamic.classpath" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../Program Files/Java/javafx-sdk-11.0.2/bin/vcruntime140.dll" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -139,9 +146,8 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15820312" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="recentsLimit" value="5" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -162,8 +168,8 @@
       <recent name="C:\Users\Admin\IntelliJIDEAProjects\Auto2.1_FXColection\src\app\home" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="app.model" />
       <recent name="app.dao" />
+      <recent name="app.model" />
       <recent name="app.contract" />
       <recent name="app" />
       <recent name="app.procession" />
@@ -172,6 +178,17 @@
   <component name="RunManager" selected="Application.Launcher">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -230,17 +247,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -279,8 +285,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ImageUtils" />
         <item itemvalue="Application.Launcher" />
+        <item itemvalue="Application.ImageUtils" />
         <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
@@ -410,6 +416,9 @@
       <workItem from="1619182882331" duration="429000" />
       <workItem from="1622037332860" duration="1086000" />
       <workItem from="1627557965702" duration="1230000" />
+      <workItem from="1634645037503" duration="298000" />
+      <workItem from="1634646061534" duration="7968000" />
+      <workItem from="1634818443463" duration="2556000" />
     </task>
     <task id="LOCAL-00001" summary="add module taofile nhanh">
       <created>1585897300802</created>
@@ -564,5 +573,9 @@
     <MESSAGE value="3.0" />
     <MESSAGE value="Complete v3.0" />
     <option name="LAST_COMMIT_MESSAGE" value="Complete v3.0" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -20,37 +20,46 @@ public class FormProcess {
     private final Map<Integer, ConfigResult> results;
     private final Finder finder = Finder.getInstance();
     private final String input;
-    private final int sl;
+    private final int maxValue;
+    private final int minValue;
     private boolean writeImage = true;
 
     public FormProcess(List<ConfigData> configs, String input) {
         this.configs = configs;
         this.input = input;
         this.results = new HashMap<>();
-        this.sl = configs.stream().map(ConfigData::getLoai)
+        this.maxValue = configs.stream().map(ConfigData::getLoai)
                 .filter(s -> s.startsWith("SDT_"))
                 .map(s -> s.replace("SDT_", ""))
                 .map(Integer::parseInt)
                 .filter(integer -> integer != 0)
                 .max(Integer::compare)
                 .orElse(Integer.MAX_VALUE);
+        this.minValue = configs.stream().map(ConfigData::getLoai)
+                .filter(s -> s.startsWith("SDT_"))
+                .map(s -> s.replace("SDT_", ""))
+                .map(Integer::parseInt)
+                .filter(integer -> integer != 0)
+                .min(Integer::compare)
+                .orElse(Integer.MIN_VALUE);
     }
 
-    public int getSl() {
-        return sl;
+    public int getMaxValue() {
+        return maxValue;
     }
 
     public void checkWrite(int lim, int soLuongSdt) {
-        if (sl == Integer.MAX_VALUE) {
+        if (maxValue == Integer.MAX_VALUE) {
             return;
         }
-
-        if (sl == lim && soLuongSdt > sl) {
+        if (maxValue == lim && soLuongSdt > maxValue) {
             clearSdtData();
             return;
         }
-
-        if (sl != lim && soLuongSdt <= lim) {
+        if (soLuongSdt < minValue) {
+            this.writeImage = false;
+        }
+        if (maxValue != lim && soLuongSdt <= lim) {
             this.writeImage = false;
         }
     }
@@ -125,6 +134,7 @@ public class FormProcess {
 
     private String doChuKy(ConfigData config, Map<String, String> data) {
         String key = doText(config, data);
+        System.out.println(data);
         return finder.findByName(key, data.get("$soGiayTo$"));
     }
 

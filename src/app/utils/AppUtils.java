@@ -57,6 +57,7 @@ public class AppUtils {
                 if (reader != null) {
                     String key = "$" + pd.getName() + "$";
                     String val = String.valueOf(reader.invoke(obj));
+                    System.out.println(key + " : " + val);
                     map.put(key, val);
                 }
             }
